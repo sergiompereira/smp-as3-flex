@@ -1,0 +1,38 @@
+<?xml version = "1.0" encoding = "utf-8"?>  
+	<!-- credits to http://alekkus.com/ -->
+    <s:Group  
+      xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark">  
+   
+	  <fx:Script>  
+			<![CDATA[
+				import flash.display.Bitmap;
+				
+				private var _image : Bitmap = null;
+
+				public function set tileImage( image : Bitmap ) : void
+				{
+					this._image = image;
+					this.invalidateDisplayList();
+				}
+
+				override protected function updateDisplayList( unscaledWidth : Number, unscaledHeight : Number ) : void
+				{
+					super.updateDisplayList(unscaledWidth, unscaledHeight );
+	
+					//debug.text = "_image";
+					if ( _image != null )
+					{
+						var bitmapData : BitmapData = new BitmapData( _image.width, _image.height );
+						bitmapData.draw( _image );      
+
+						graphics.clear();
+						graphics.beginBitmapFill( bitmapData );
+						graphics.drawRect(0, 0, unscaledWidth, unscaledHeight);
+						graphics.endFill();
+					}
+				}
+			]]>
+	   </fx:Script>  
+	   <s:Label id="debug"></s:Label>
+ </s:Group>  

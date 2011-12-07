@@ -1,0 +1,34 @@
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark" 
+			 xmlns:fb = "http://ns.adobe.com/flashbuilder/2009" alpha.disabledGroup = "0.5" >
+			 
+	<s:states>
+		<s:State name="normal" />
+		<s:State name="disabled" stateGroups="disabledGroup" />
+	</s:states>
+	
+	
+	<s:Group id="contentGroup" width="100%" height="100%">
+		
+	</s:Group>
+	<s:Group>
+		<s:Group id="barControl">
+				
+				<s:Rect width="10" height="150">
+					<s:fill>
+						<s:SolidColor id="barControlColor" color="0xd0d0d0"/>
+					</s:fill>
+				</s:Rect>
+			
+		</s:Group>
+		
+		<s:Group id="buttonControl">
+			
+				<s:Rect width="10" height="30">
+					<s:fill>
+						<s:SolidColor id="buttonControlColor" color="0x333333"/>
+					</s:fill>
+				</s:Rect>
+			
+		</s:Group>
+	</s:Group>
+</s:SparkSkin>
